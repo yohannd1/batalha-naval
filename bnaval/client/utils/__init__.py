@@ -63,9 +63,10 @@ def point_in_rect(p: tuple[int, int], r: tuple[int, int, int, int] | Rect) -> bo
 class ClientConn:
     """Wrapper para as conexões feitas pelo client."""
 
-    def __init__(self, sock: socket = socket(AF_INET, SOCK_STREAM)):
-        sock.connect((SERVER_ADDR, SERVER_PORT))
-        self.conn = Conn(sock)
+    def __init__(self, sock: socket | None = None):
+        sock2 = sock or socket(AF_INET, SOCK_STREAM)
+        sock2.connect((SERVER_ADDR, SERVER_PORT))
+        self.conn = Conn(sock2)
 
     def receive(self) -> JsonValue:
         return self.conn.recv()
