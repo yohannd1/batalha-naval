@@ -83,14 +83,15 @@ class Menu:
         JOIN_BTN_CENTER = (222, 530)
         JOIN_BTN_SIZE = (320, 50)
 
-        self.ui.draw_button(
-            center=MUSIC_OFF_BTN_CENTER,
-            size=MUSIC_OFF_BTN_SIZE,
-            text="Desativar música",
-            font=self.font3,
-        )
-        if self.ui.last_btn_clicked:
-            self.snd.disable_bgm()
+        if self.snd.bgm_enabled:
+            self.ui.draw_button(
+                center=MUSIC_OFF_BTN_CENTER,
+                size=MUSIC_OFF_BTN_SIZE,
+                text="Desativar música",
+                font=self.font3,
+            )
+            if self.ui.last_btn_clicked:
+                self.snd.disable_bgm()
 
         self.ui.draw_button(
             center=CREATE_BTN_CENTER,

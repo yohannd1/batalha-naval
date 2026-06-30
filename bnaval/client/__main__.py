@@ -122,7 +122,7 @@ class Main:
                 if rg == "MENU":
                     # resetar o jogo
                     self._menu.reset()
-                    self.snd.play("mus_titlescreen")
+                    self.snd.play_bgm("mus_titlescreen")
                     if self._game is not None:
                         self._game.reset()
                     self.current = self._menu

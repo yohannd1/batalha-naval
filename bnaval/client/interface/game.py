@@ -134,6 +134,8 @@ class Game:
                         self.game_over_text = (
                             "Você Ganhou!" if winner_is_you else "Você Perdeu!"
                         )
+                        self.snd.stop_bgm()
+                        self.snd.play("mus_win" if winner_is_you else "mus_lose")
                 else:
                     print(f"Mensagem desconhecida recebida: {received}")
             else:

@@ -42,9 +42,9 @@ class SoundPlayer:
         self.stop_bgm()
 
     def play_bgm(self, name: str) -> None:
+        self.stop_bgm()
         if not self.bgm_enabled:
             return
-        self.stop_bgm()
         self.play(name, loop=True)
         self.current_bgm = name
 
@@ -82,6 +82,8 @@ class ResourceManager:
         self.known["snd_hit_ok"] = load_sound(AssetPaths.SFX_HIT_OK, 0.6)
         self.known["snd_hit_miss"] = load_sound(AssetPaths.SFX_HIT_MISS, 0.6)
         self.known["mus_titlescreen"] = load_sound(AssetPaths.MUS_TITLESCREEN, 0.5)
+        self.known["mus_win"] = load_sound(AssetPaths.MUS_WIN, 0.5)
+        self.known["mus_lose"] = load_sound(AssetPaths.MUS_LOSE, 0.5)
 
         # fontes de maior para menor
         self.known["font1"] = Font(AssetPaths.FONT, 34)

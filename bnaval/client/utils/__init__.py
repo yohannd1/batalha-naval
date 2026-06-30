@@ -27,6 +27,8 @@ class AssetPaths:
     SFX_HIT_OK = "bnaval/client/assets/sfx_hit_ok.mp3"
     SFX_HIT_MISS = "bnaval/client/assets/sfx_hit_miss.mp3"
     MUS_TITLESCREEN = "bnaval/client/assets/mus_titlescreen.mp3"
+    MUS_WIN = "bnaval/client/assets/mus_win.mp3"
+    MUS_LOSE = "bnaval/client/assets/mus_lose.mp3"
 
 
 class Colors:
